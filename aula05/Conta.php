@@ -7,36 +7,36 @@ class Conta {
     private $saldo;
     private $status; // conta aberta = true
     
-    function __construct ( $t, $d){
+    function __construct (){
         $this-> numConta += 1 ;
-        $this-> dono = $d;
-        $this->status = false;
         $this->saldo = 0.00;
-        if ($t == 'cc' ){
-            $this->tipo = true;
-        }else{
-            $this->tipo = false;
-        }
+
     }
 
-    function abrirConta(){
-        $this->status = true;
-        if ($this->tipo == true ){
+    function abrirConta($t){
+        $this->tipo = $t;
+        if ($this->tipo == 'CP' ){
             $this->saldo = 50.00;
-        }elseif ($this->tipo == false ){
+        }else if ($this->tipo == 'CP' ){
             $this->saldo = 150.00;
         }
     }
 
     function fecharConta(){
-        if ($this->saldo == 0) {
-            $this->status = true;
+        if ($this->saldo > 0) {
+            echo "Conta Com saldo positivo!";
+        }elseif ($this->saldo < 0) {
+            echo "Conta Com saldo negativo!";
+        }else{
+            $this->status = false;
         }
     }
 
     function depositar($v){
         if ($this->status = true){
             $this->saldo += $v;
+        }else {
+            echo "Conta Inativa!";
         }
     }
 
@@ -50,39 +50,39 @@ class Conta {
     }
 
     function pagarMensalidade(){
-        if ($this->status = true &&  $this->tipo = true  ){
+        if ($this->status = true &&  $this->tipo = 'CC'  ){
             $this->saldo -= 12;
-        }elseif ($this->status = true &&  $this->tipo = false ) {
+        }elseif ($this->status = true &&  $this->tipo = 'CP' ) {
             $this->saldo -= 20;
         }
     }
 
     function getnumConta(){
-        echo  $this->status;
+        return $this->status;
     } 
     function setnumConta($n){
        $this->status = $n;
     }
     function getTipo(){
-        echo  $this->tipo;
+        return $this->tipo;
     } 
     function setTipo($t){
        $this->tipo = $t;
     } 
     function getDono(){
-        echo  $this->dono;
+        return $this->dono;
     }
     function setDono($d){
         $this->dono = $d;
     }
     function getSaldo(){
-        echo  $this->saldo;
+        return $this->saldo;
     }
     function setSaldo($sl){
        $this->saldo = $s;
     }
     function getStatus(){
-        echo  $this->status;
+        return $this->status;
     }
     function setStatus($st){
         $this->status = $st;

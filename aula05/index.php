@@ -10,15 +10,32 @@
     <pre>
     <?php
         require_once 'Conta.php';
-        $c1 = new Conta('cp','Elias Pacífico');
-        print_r($c1);
+        $p1 = new Conta;
+        $p2 = new Conta;
 
-        $c1-> abrirConta();
-        $c1-> pagarMensalidade();
-        $c1->sacar(200);
+        $p1->abrirConta("CC");
+        $p1->setDono("Jubleu");
+        $p1->setNumConta("11111");
+        $p2->abrirConta("CP");
+        $p2->setDono("Julesca");
+        $p2->setNumConta("22222");
+
+        
+        $p1->depositar(300);
+        $p2->depositar(500);
+        
+        $p2->sacar(100);
+
+        $p1->pagarMensalidade();
+        $p2->pagarMensalidade();
+        
+
 
     echo"<p> - - - - - -Fim da Trazação - - - - - - - -</p>";
-        print_r($c1);
+        
+    print_r($p1);
+    print_r($p2);
+
     ?>
     </pre>
 </body>

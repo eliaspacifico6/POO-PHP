@@ -9,7 +9,7 @@ interface Controlador {
     public function menosVolume();
     public function ligarMudo();
     public function desligarMudo();
-    public function paly();
+    public function play();
     public function pause();
 
 }

@@ -74,7 +74,7 @@ class ControleRemoto implements Controlador {
         }
 
     }
-    public function paly(){        
+    public function play(){        
         if ($this->getLigado() && !($this->getTocando()) ){
             $this->setTocando(true);
         }

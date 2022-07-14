@@ -68,54 +68,54 @@
 
         } 
 
-        private function getNome(){
+         function getNome(){
             return $this->nome;
         }
-        private function getNacionalidade(){
+         function getNacionalidade(){
             return $this->nacionalidade;
         }
-        private function getIdade(){
+         function getIdade(){
             return $this-> idade;
         }
-        private function getAltura(){
+         function getAltura(){
             return $this->altura;
         }
-        private function getPeso(){
+         function getPeso(){
             return $this->peso;
         }
-        private function getCategoria(){
+         function getCategoria(){
             return $this->categoria;
         }
-        private function getVitorias(){
+         function getVitorias(){
             return $this->vitorias;
         }
-        private function getDerrotas(){
+         function getDerrotas(){
             return $this->derrotas;
         }
-        private function getEmpates(){
+         function getEmpates(){
             return $this->empates;
         }
 
         
 
-        private function setNome($no){
+        public function setNome($no){
             $this->nome = $no ;
         }
-        private function setNacionalidade($na){
+        public function setNacionalidade($na){
             $this->nacionalidade = $na ;
         }
-        private function setIdade($id){
+        public function setIdade($id){
             $this->idade = $id ;
         }
-        private function setAltura($al){
+        public function setAltura($al){
             $this->altura = $al ;
         }
-        private function setPeso($pe){
+        public function setPeso($pe){
             $this->peso = $pe ;
             $this->setCategoria();
         }
 
-        private function setCategoria(){
+        public function setCategoria(){
                       
            if  ($this->peso < 52.2 ){
                 $this->categoria = 'Invalido';
@@ -129,13 +129,13 @@
                 $this->categoria = 'Invalido';
            }
         }
-        private function setVitorias($vi){
+        public function setVitorias($vi){
             $this->vitorias = $vi ;
         }
-        private function setDerrotas($de){
+        public function setDerrotas($de){
             $this->derrotas = $de ;
         }
-        private function setEmpates($em){
+        public function setEmpates($em){
             $this->empates = $em ;
         }
 

@@ -6,9 +6,9 @@ class Pessoa{
     private $sexo;
 
     function __construct($nome, $idade, $sexo ){
-        $this->nome = $nome;
-        $this->idade = $idade;
-        $this->sexo = $sexo;
+        $this->setNome($nome);
+        $this->setIdade($idade) ;
+        $this->setSexo($sexo) ;
     }
 
     function fazerAniversario(){

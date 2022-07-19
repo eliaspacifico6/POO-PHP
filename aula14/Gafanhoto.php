@@ -5,6 +5,14 @@ require_once "./Pessoa.php";
 class Gafanhoto extends Pessoa {
     private $login, $totAssistidos;
 
+    public function __construct($nome,$idade, $sexo, $login) {
+        $this->setNome($nome);
+        $this->setIdade($idade);
+        $this->setSexo($sexo);
+        $this->setLogin($login);
+        $this->setTotAssistidos(0);
+    }
+
     function viuMaisUm(){
         $this->setTotAssistidos($this->getTotAssistidos() +1);
         $this->ganharExp();

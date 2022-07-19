@@ -5,7 +5,15 @@ require_once "./AcoesVideo.php";
 class Video implements AcoesVideo{
     private $titulo, $avaliacao, $Views, $curtidads, $reproduzindo;
 
-    
+    public function __construct ($titulo) {
+        $this->setTitulo($titulo);
+        $this->setAvaliacao(1);
+        $this->setViews(0);
+        $this->setCurtidads(0);
+        $this->setReproduzindo(false);
+    }
+ 
+
     public function play(){
         $this->setReproduzindo(True);
         $this->setViews($this->getViews() +1);
